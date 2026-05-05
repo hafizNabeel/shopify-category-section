@@ -1,0 +1,79 @@
+<ion-page>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Choose Feature</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <div class="page-container">
+      <ng-container *ngIf="(originalImage$ | async) as image">
+        <img [src]="image" alt="Selected" class="image-preview" />
+      </ng-container>
+
+      <ion-list>
+        <ion-item>
+          <ion-button expand="block" (click)="chooseFeature('restore')">
+            Restore Old Photo
+          </ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-button expand="block" (click)="chooseFeature('remove-bg')">
+            Remove Background
+          </ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-button expand="block" (click)="chooseFeature('colorize')">
+            Colorize B&W
+          </ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-button expand="block" (click)="chooseFeature('dehaze')">
+            Dehaze
+          </ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-button expand="block" (click)="chooseFeature('lightup')">
+            Light Up
+          </ion-button>
+        </ion-item>
+      </ion-list>
+
+      <div class="tune-block" *ngIf="(colorTune$ | async) as tune">
+        <h2>Color Tune</h2>
+        <ion-item>
+          <ion-label>Brightness</ion-label>
+          <ion-range
+            min="0.5"
+            max="1.8"
+            step="0.1"
+            [value]="tune.brightness"
+            (ionChange)="updateTune({ ...tune, brightness: $event.detail.value })"
+          ></ion-range>
+        </ion-item>
+        <ion-item>
+          <ion-label>Contrast</ion-label>
+          <ion-range
+            min="0.5"
+            max="1.8"
+            step="0.1"
+            [value]="tune.contrast"
+            (ionChange)="updateTune({ ...tune, contrast: $event.detail.value })"
+          ></ion-range>
+        </ion-item>
+        <ion-item>
+          <ion-label>Saturation</ion-label>
+          <ion-range
+            min="0.5"
+            max="1.8"
+            step="0.1"
+            [value]="tune.saturation"
+            (ionChange)="updateTune({ ...tune, saturation: $event.detail.value })"
+          ></ion-range>
+        </ion-item>
+        <ion-button expand="block" (click)="chooseFeature('color-tune')">
+          Apply Color Tune
+        </ion-button>
+      </div>
+    </div>
+  </ion-content>
+</ion-page>

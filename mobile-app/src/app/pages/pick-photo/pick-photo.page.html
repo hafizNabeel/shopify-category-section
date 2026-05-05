@@ -1,0 +1,16 @@
+<ion-page>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Select Photo</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <div class="page-container">
+      <p>Choose a photo from your gallery to begin.</p>
+      <ion-button expand="block" class="primary-button" (click)="pickPhoto()">
+        Pick From Gallery
+      </ion-button>
+      <ion-loading [isOpen]="isLoading" message="Opening gallery..."></ion-loading>
+    </div>
+  </ion-content>
+</ion-page>

@@ -1,0 +1,26 @@
+<ion-page>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Result</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <div class="page-container">
+      <div class="result-grid">
+        <div>
+          <h3>Before</h3>
+          <img [src]="(originalImage$ | async) || ''" alt="Original" class="image-preview" />
+        </div>
+        <div>
+          <h3>After</h3>
+          <img [src]="(processedImage$ | async) || ''" alt="Processed" class="image-preview" />
+        </div>
+      </div>
+      <ion-button expand="block">Save to Device</ion-button>
+      <ion-button expand="block" fill="outline">Share</ion-button>
+      <ion-button expand="block" color="medium" (click)="tryAnother()">
+        Try Another Photo
+      </ion-button>
+    </div>
+  </ion-content>
+</ion-page>
