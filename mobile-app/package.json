@@ -1,0 +1,28 @@
+{
+  "name": "ai-photo-restorer",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "ionic serve",
+    "build": "ionic build"
+  },
+  "dependencies": {
+    "@angular/common": "^17.0.0",
+    "@angular/compiler": "^17.0.0",
+    "@angular/core": "^17.0.0",
+    "@angular/forms": "^17.0.0",
+    "@angular/platform-browser": "^17.0.0",
+    "@angular/platform-browser-dynamic": "^17.0.0",
+    "@angular/router": "^17.0.0",
+    "@ionic/angular": "^7.0.0",
+    "@ngrx/effects": "^17.0.0",
+    "@ngrx/store": "^17.0.0",
+    "@ngrx/store-devtools": "^17.0.0",
+    "@capacitor/camera": "^5.0.0",
+    "rxjs": "^7.8.0"
+  },
+  "devDependencies": {
+    "@angular/cli": "^17.0.0",
+    "typescript": "^5.2.0"
+  }
+}

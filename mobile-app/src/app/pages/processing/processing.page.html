@@ -1,0 +1,15 @@
+<ion-page>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Processing</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <div class="page-container">
+      <ng-container *ngIf="(feature$ | async) as feature">
+        <h2>Applying {{ feature }}...</h2>
+      </ng-container>
+      <ion-loading [isOpen]="true" message="Processing image..."></ion-loading>
+    </div>
+  </ion-content>
+</ion-page>
